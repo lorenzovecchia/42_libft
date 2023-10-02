@@ -121,4 +121,6 @@ c: El carácter delimitador.
 El array de nuevas strings resulatente de la
 separación.
 NULL si falla la reserva de memoria.
+
 */
+/////
