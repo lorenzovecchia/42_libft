@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvecchia <lvecchia@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,28 +12,27 @@
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+t_list *ft_lstlast(t_list *lst)
 {
-    int count;
-
-    count = 0;
-    while (lst != NULL)
-    {
-        count ++;
+    if (lst == NULL)
+        return (NULL);
+    while (lst -> next != NULL)
         lst = lst -> next;
-    }
-    return (count);
+    return (lst);
 }
-
 /*
 int main(void)
 {
     //initialising pointers 
 
-    int *data1 = (int *)12;
-    int *data2 = (int *)34;
-    int *data3 = (int *)56;
-    int *data4 = (int *)78;
+    int *data1 = (int *)malloc(sizeof(int));
+	int *data2 = (int *)malloc(sizeof(int));
+	int *data3 = (int *)malloc(sizeof(int));
+	int *data4 = (int *)malloc(sizeof(int));
+	*data1 = 10;
+	*data2 = 11;
+	*data3 = 12;
+	*data4 = 13;
 
     //creating nodes
 
@@ -56,9 +55,12 @@ int main(void)
     node3->next = node4;
     node4->next = NULL;
 
+    // obtengo el ultimo nodo de la lista
+	t_list *lastNode = ft_lstlast(node1);
+
     // display results
 
-    printf("The current number of nodes is %d\n", ft_lstsize(node1));
+ 	printf("Contenido del ultimo nodo: %d\n", *(int *)(lastNode->content));
 
     // free
     
@@ -66,6 +68,10 @@ int main(void)
     free(node2);
     free(node3);
     free(node4);
+    free(data1);
+	free(data2);
+	free(data3);
+	free(data4);
 
     return(0);
 }*/
