@@ -24,7 +24,7 @@ void ft_lstadd_back(t_list **lst, t_list *new)
             lastnode -> next = new;
     }
 }
-
+/*
 //------------------------funcion que imprime la lista------------------------
 static void	ft_print_list(t_list *lst)
 {
@@ -72,3 +72,4 @@ int	main(void)
 
 	return (0);
 }
+*/
